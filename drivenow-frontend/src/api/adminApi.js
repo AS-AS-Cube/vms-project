@@ -9,3 +9,4 @@ export const verifyLicense = (licenseId, approve) =>
   api.put(`/api/admin/licenses/${licenseId}/verify`, {
     approve,
   });
+  // just testing CI working or not
