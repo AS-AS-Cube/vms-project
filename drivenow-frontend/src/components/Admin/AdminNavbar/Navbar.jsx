@@ -1,69 +1,76 @@
-import React from 'react';
+import React from "react";
 import "./Navbar.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import { FaRegUser } from "react-icons/fa";
 
-function AdminNavbar() {
+const Navbar = () => {
+  const linkStyle = { textDecoration: "none", color: "inherit" };
   const navigate = useNavigate();
-
-  const styles = {
-    link: {
-      textDecoration: "none",
-      color: "inherit",
-    },
-  };
-
   const handleLogout = () => {
     // If you store auth data in future, clear it here
     // localStorage.removeItem("token");
 
-    navigate("/login");  // redirect to login page
+    navigate("/login"); // redirect to login page
   };
-
   return (
-    <nav className="navbar">
-      <div className="logo">🚗 DriveNow</div>
+    <nav className="adminnavbar">
+      <div className="adminnavlogo">🚗 DriveNow</div>
 
-      <ul className="nav-menu">
-        <div className="navlist">
+      <ul className="adminnav-menu">
+        <li>
           <NavLink
             to="/admin/dashboard"
-            style={styles.link}
+            style={linkStyle}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             Dashboard
           </NavLink>
-
+        </li>
+        <li>
           <NavLink
             to="/admin/users"
-            style={styles.link}
+            style={linkStyle}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             Users
           </NavLink>
-
+        </li>
+        <li>
+          <NavLink
+            to="/admin/vehicles"
+            style={linkStyle}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Vehicles
+          </NavLink>
+        </li>
+        <li>
           <NavLink
             to="/admin/license-verification"
-            style={styles.link}
+            style={linkStyle}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             License Verification
           </NavLink>
-
-
-
-          <li>Vehicles</li>
-          <li>Bookings</li>
-          <li>Reports</li>
-          <li>Complaints</li>
-        </div>
+        </li>
+        <li>
+          <NavLink
+            to="/admin/bookings"
+            style={linkStyle}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Bookings
+          </NavLink>
+        </li>
       </ul>
 
-      <div className="profile-section">
-        <span>👤 Admin User</span>
-        
+      <div className="admin-profile-section">
+        <span>
+          <FaRegUser size={20} /> Admin User
+        </span>
         <button
           type="button"
-          className="btn btn-outline-danger"
+          className="logout-btn"
           onClick={handleLogout}
         >
           Logout
@@ -71,6 +78,6 @@ function AdminNavbar() {
       </div>
     </nav>
   );
-}
+};
 
-export default AdminNavbar;
+export default Navbar;

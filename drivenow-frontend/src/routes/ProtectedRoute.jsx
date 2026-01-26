@@ -16,7 +16,7 @@ function ProtectedRoute({ children, role }) {
 
   if (role && user.role !== role) {
     console.log("❌ Role mismatch → redirect to home");
-    return <Navigate to="/" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   console.log("✅ Access allowed");

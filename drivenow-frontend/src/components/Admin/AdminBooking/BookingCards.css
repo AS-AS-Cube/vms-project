@@ -1,0 +1,203 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+/* CARD */
+.booking-card {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/* IMAGE */
+.booking-image {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.booking-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* PLACEHOLDER IMAGE */
+.booking-image.placeholder {
+  background: #f3f4f6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #9ca3af;
+}
+
+/* CONTENT */
+.booking-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.title h3 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+/* AMOUNT */
+.amount {
+  text-align: right;
+}
+
+.amount h2 {
+  color: #16a34a;
+  margin: 0;
+}
+
+.amount p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* STATUS PILLS (scoped) */
+.booking-card .pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.booking-card .pill.active {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.booking-card .pill.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.booking-card .pill.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+
+
+.booking-card .pill.cancelled {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.booking-card .pill.refunded {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* DETAILS */
+.booking-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+  color: #374151;
+}
+
+.booking-details p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+/* SPECIAL REQUEST */
+.special-request {
+  background: #eff6ff;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 12px;
+  color: #1d4ed8;
+  font-size: 14px;
+}
+
+/* CANCELLATION BOX */
+.cancel-box {
+  margin-top: 12px;
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* FOOTER */
+.booking-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7280;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 1px;
+  font-size: small;
+}
+
+/* BUTTONS */
+.btn-outline {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-approve {
+  background: #dcfce7;
+  color: #166534;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-reject {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-resolve {
+  background: #111827;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}

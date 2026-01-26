@@ -1,14 +1,29 @@
-import React from 'react'
-import "./AdminDashboard.css";
-import { FaUsers, FaCar, FaCalendarAlt } from "react-icons/fa";
-import { MdAttachMoney } from "react-icons/md";
-import { HiOutlineDocumentReport } from "react-icons/hi";
-import { IoChatbubbles } from "react-icons/io5";
-import { IoIosSettings } from "react-icons/io";
+import React from "react"
+import "./AdminDashboard.css"
+import { FaUsers, FaCar, FaCalendarAlt } from "react-icons/fa"
+import { MdAttachMoney } from "react-icons/md"
+import { useEffect, useState } from "react"
+import {useNavigate} from "react-router-dom" 
+import api from "../../../api/axios";
 
-function AdminDashboard() {
+
+
+const AdminDashboard = () => {
+  const [stats, setStats] = useState(null)
+
+  const navigate = useNavigate()
+  useEffect(() => {
+  api
+    .get("/api/admin/dashboard/stats")
+    .then(res => setStats(res.data))
+    .catch(err => {
+      console.error(err);
+      setStats(null);
+    });
+}, []);
+
   return (
-    <div className="dashboard">
+    <div className="admindashboard">
 
       {/* Title */}
       <div className="header">
@@ -22,8 +37,7 @@ function AdminDashboard() {
         <div className="stat-card">
           <div>
             <p className="label">Total Users</p>
-            <h2>2,547</h2>
-            <span className="growth">▲ +12% from last month</span>
+            <h2>{stats?.totalUsers ?? 0}</h2>
           </div>
           <FaUsers className="icon blue" />
         </div>
@@ -31,8 +45,7 @@ function AdminDashboard() {
         <div className="stat-card">
           <div>
             <p className="label">Active Vehicles</p>
-            <h2>847</h2>
-            <span className="growth">▲ +8% from last month</span>
+            <h2>{stats?.activeVehicles ?? 0}</h2>
           </div>
           <FaCar className="icon green" />
         </div>
@@ -40,8 +53,8 @@ function AdminDashboard() {
         <div className="stat-card">
           <div>
             <p className="label">Monthly Revenue</p>
-            <h2>$127,450</h2>
-            <span className="growth">▲ +15% from last month</span>
+            <h2>₹ {stats?.monthlyRevenue ?? 0}</h2>
+    
           </div>
           <MdAttachMoney className="icon yellow" />
         </div>
@@ -49,8 +62,8 @@ function AdminDashboard() {
         <div className="stat-card">
           <div>
             <p className="label">Active Bookings</p>
-            <h2>189</h2>
-            <span className="growth">▲ +5% from last month</span>
+            <h2>{stats?.activeBookings ?? 0}</h2>
+    
           </div>
           <FaCalendarAlt className="icon purple" />
         </div>
@@ -61,16 +74,12 @@ function AdminDashboard() {
       <h3 className="qa-title">Quick Actions</h3>
 
       <div className="quick-actions">
-        <button className="qa-btn"><FaUsers /> Manage Users</button>
-        <button className="qa-btn"><FaCar /> Vehicles</button>
-        <button className="qa-btn"><FaCalendarAlt /> Bookings</button>
-        <button className="qa-btn"><HiOutlineDocumentReport /> Reports</button>
-        <button className="qa-btn"><IoChatbubbles /> Complaints</button>
-        <button className="qa-btn"><IoIosSettings /> Settings</button>
+        <button className="qa-btn" onClick={() => navigate("/admin/users")}><FaUsers /> Manage Users</button>
+        <button className="qa-btn" onClick={() => navigate("/admin/vehicles")}><FaCar /> Vehicles</button>
+        <button className="qa-btn" onClick={() => navigate("/admin/bookings")}><FaCalendarAlt /> Bookings</button>
       </div>
       </div>
     </div>
-  );
+  )
 }
-
-export default AdminDashboard;
+export default AdminDashboard

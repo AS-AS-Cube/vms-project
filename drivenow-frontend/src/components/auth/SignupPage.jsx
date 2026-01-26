@@ -23,8 +23,8 @@ function SignupPage() {
 
   // UI role → Backend enum role
   const mapRoleToBackend = (role) => {
-    if (role === "vendor") return "VENDOR";
-    return "CUSTOMER";
+    if (role === "vendor") return "ROLE_VENDOR";
+    return "ROLE_CUSTOMER";
   };
 
   const handleSignup = async (e) => {

@@ -6,7 +6,9 @@ import AdminNavbar from "../components/Admin/AdminNavbar/Navbar";
             return (
                 <> 
                 <AdminNavbar/>
-                <Outlet/>
+                <div style={{ padding: "20px" }}>
+                <Outlet />  
+                </div>
                 </>
             )
         }

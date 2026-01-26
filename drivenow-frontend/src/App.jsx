@@ -19,6 +19,8 @@ import SignupPage from "./components/auth/SignupPage";
 /* Admin */
 import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import AdminUser from "./components/Admin/AdminUser/AdminUser";
+import AdminBooking from "./components/Admin/AdminBooking/AdminBooking";
+import AdminVehicle from "./components/Admin/AdminVehicle/AdminVehicle";
 
 /* Vendor */
 import VendorDashboard from "./vendor/dashboard/VendorDashboard";
@@ -55,7 +57,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         {/* ================= PUBLIC ================= */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
@@ -64,17 +65,17 @@ function App() {
         {/* ================= ADMIN ================= */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route
-            path="dashboard"
+            path="/admin/dashboard"
             element={
-              <ProtectedRoute role="ADMIN">
+              <ProtectedRoute role="ROLE_ADMIN">
                 <AdminDashboard />
               </ProtectedRoute>
             }
           />
           <Route
-            path="users"
+            path="/admin/users"
             element={
-              <ProtectedRoute role="ADMIN">
+              <ProtectedRoute role="ROLE_ADMIN">
                 <AdminUser />
               </ProtectedRoute>
             }
@@ -88,9 +89,23 @@ function App() {
             path="/admin/license-verification"
             element={<AdminLicenseVerification />}
           />
-
-
-        </Route>
+          <Route
+            path="/admin/vehicles"
+            element={
+              <ProtectedRoute role="ROLE_ADMIN">
+                <AdminVehicle />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/bookings"
+            element={
+              <ProtectedRoute role="ROLE_ADMIN">
+                <AdminBooking />
+              </ProtectedRoute>
+            }
+          />
+        </Route> 
 
         {/* ================= VENDOR ================= */}
         <Route path="/vendor" element={<VendorLayout />}>
@@ -148,7 +163,7 @@ function App() {
         <Route
           path="/customerdashboard"
           element={
-            <ProtectedRoute role="CUSTOMER">
+            <ProtectedRoute role="ROLE_CUSTOMER">
               <>
                 <CNavbar />
                 <CustomerDashboard />
@@ -160,7 +175,7 @@ function App() {
         <Route
           path="/customer/profile"
           element={
-            <ProtectedRoute role="CUSTOMER">
+            <ProtectedRoute role="ROLE_CUSTOMER">
               <>
                 <CNavbar />
                 <CustomerProfile />
@@ -172,7 +187,7 @@ function App() {
         <Route
           path="/mybookings"
           element={
-            <ProtectedRoute role="CUSTOMER">
+            <ProtectedRoute role="ROLE_CUSTOMER">
               <>
                 <CNavbar />
                 <MyBookings />
@@ -204,7 +219,6 @@ function App() {
 
         {/* ================= FALLBACK ================= */}
         <Route path="*" element={<Navigate to="/" replace />} />
-
       </Routes>
     </BrowserRouter>
   );

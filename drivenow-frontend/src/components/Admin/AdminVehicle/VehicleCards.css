@@ -1,0 +1,213 @@
+/* GRID: always 2 cards per row */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+  align-items: stretch;
+}
+
+/* CARD */
+.vehicle-card {
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  gap: 20px;
+  width: 100%;
+  min-height: 260px; /* flexible height */
+}
+
+/* IMAGE */
+.vehicle-image {
+  position: relative;
+  flex: 0 0 215px; /* fixed column for image */
+}
+
+.vehicle-image img {
+  width: 215px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* BADGES */
+.badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.pill {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge.active { background: #e6f9ee; color: #0f9d58; }
+.badge.inactive { background: #f0f0f0; color: #777; }
+
+.badge.pending { background: #fff4cc; color: #d48806; }
+.badge.approved { background: #e6f9ee; color: #0f9d58; }
+.badge.rejected { background: #fdecea; color: #d93025; }
+
+/* DETAILS */
+.vehicle-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOP */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.top-row h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.sub {
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+.vendor {
+  color: #2563eb;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* RATING: remove hard margin */
+.rating {
+  color: #f59e0b;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating span {
+  color: #6b7280;
+}
+
+/* INFO */
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 12px 0;
+  color: #374151;
+}
+
+.info-row span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* LOCATION */
+.location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+/* BOTTOM */
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto; /* push to bottom */
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.price span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #374151;
+}
+
+.earnings {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* ACTIONS */
+/* ACTION BUTTONS */
+.icon-btn {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  background: #f9fafb;
+}
+
+/* APPROVE */
+.approve-btn {
+  background: #111827;
+  color: #fff;
+  border: none;
+}
+
+.approve-btn:hover {
+  background: #000;
+}
+
+/* REJECT */
+.reject-btn {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+}
+
+.reject-btn:hover {
+  background: #dc2626;
+}
+
+/* WARNING MESSAGE */
+.vehicle-warning {
+  margin-top: 10px;
+  background: #fff1f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 10px 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+}

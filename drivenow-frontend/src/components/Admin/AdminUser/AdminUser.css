@@ -1,23 +1,38 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", sans-serif; 
+.adminuser {
+  padding-bottom: 40px;
+  margin-top: 60px;
 }
-body {
-     background: #F9FAFB;
+/* HEADER */
+.sub {
+  margin-top: 2px;
+  color: #777;
 }
-.header {
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
   padding: 30px 40px 10px;
 }
-
-.header h1 {
+.header-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+}
+.user-header p {
+  margin-top: 4px;
+  color: #6b7280;
+  font-size: 16px;
+}
+.user-header h1 {
+  margin-bottom: 6px;
   font-size: 32px;
   font-weight: bold;
 }
 
-.sub {
-  margin-top: 2px;
-  color: #777;
+.header-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
 }
 
 .user-table {

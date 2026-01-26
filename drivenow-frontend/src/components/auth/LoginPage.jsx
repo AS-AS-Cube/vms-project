@@ -35,11 +35,11 @@ function LoginPage() {
     localStorage.setItem("user", JSON.stringify(user));
 
     // 4. Role-based navigation
-    if (user.role === "VENDOR") {
+    if (user.role === "ROLE_VENDOR") {
       navigate("/vendor/dashboard");
-    } else if (user.role === "CUSTOMER") {
+    } else if (user.role === "ROLE_CUSTOMER") {
       navigate("/customerdashboard");
-    } else if (user.role === "ADMIN") {
+    } else if (user.role === "ROLE_ADMIN") {
       navigate("/admin/dashboard");
     }
 

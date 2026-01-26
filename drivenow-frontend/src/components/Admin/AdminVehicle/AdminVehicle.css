@@ -1,0 +1,105 @@
+.adminvehicle {
+  padding-bottom: 40px;
+  margin-top: 60px;
+}
+/* HEADER */
+.sub {
+  margin-top: 2px;
+  color: #777;
+}
+.vehicle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 30px 40px 10px;
+}
+.header-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+}
+.vehicle-header p {
+  margin-top: 4px;
+  color: #6b7280;
+  font-size: 16px;
+}
+.vehicle-header h1 {
+  margin-bottom: 6px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* BUTTONS */
+.add-btn {
+  background: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.export-btn {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 10px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* STATS SECTION */
+.stats-section {
+  display: flex;
+  gap: 25px;
+  padding: 20px 40px;
+}
+
+.stat-card {
+  flex: 1;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+
+.label {
+  color: gray;
+  font-size: 15px;
+}
+
+.stat-card h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.growth {
+  margin-top: 5px;
+  color: rgb(28, 150, 28);
+  font-size: 13px;
+}
+
+.icon {
+  font-size: 48px;
+}
+
+.blue { color: #1a73e8; }
+.green { color: #0f9d58; }
+.yellow { color: goldenrod; }
+.purple { color: #9c27b0; }
+.orange {color : rgb(255, 122, 33)}

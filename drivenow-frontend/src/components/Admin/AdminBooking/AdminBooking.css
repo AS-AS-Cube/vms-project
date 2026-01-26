@@ -1,0 +1,60 @@
+.adminbooking {
+  padding-bottom: 40px;
+  margin-top: 60px;
+}
+/* HEADER */
+.sub {
+  margin-top: 2px;
+  color: #777;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 30px 40px 10px; 
+}
+
+/* LEFT */
+.booking-header h1 {
+  margin-bottom: 6px;
+  font-size: 32px;
+  font-weight: bold;
+}
+.booking-header p {
+  color: #6b7280;
+  font-size: 16px;
+}
+/* RIGHT BUTTONS */
+.header-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* EXPORT BUTTON */
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
